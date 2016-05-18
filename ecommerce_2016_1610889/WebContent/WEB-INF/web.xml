@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>ecommerce_2016_1610889</display-name>
+  <welcome-file-list>
+    <welcome-file>index</welcome-file>
+  </welcome-file-list>
+ 
+ <filter>
+  <filter-name>CookieMode</filter-name>
+  <filter-class>ecommerce_2016_1610889.session.CookieMode</filter-class>
+</filter>
+ <filter-mapping>
+  <filter-name>CookieMode</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+ 
+ 
+ <servlet>
+    <servlet-name>Registrati</servlet-name>
+    <servlet-class>ecommerce_2016_1610889.auth.Registrati</servlet-class>
+ 	   <init-param>
+      <param-name>XML</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Registrati</servlet-name>
+    <url-pattern>/Registrati</url-pattern>
+  </servlet-mapping>
+ 
+ 
+ <servlet>
+    <servlet-name>login</servlet-name>
+    <servlet-class>ecommerce_2016_1610889.auth.Login</servlet-class>
+ 	   <init-param>
+      <param-name>XML</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+    <servlet-name>DeleteItem</servlet-name>
+    <jsp-file>/admin_panel/delete_item.jsp</jsp-file>
+ 	   <init-param>
+      <param-name>XML</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteItem</servlet-name>
+    <url-pattern>/delete_item.jsp</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+    <servlet-name>insertItem</servlet-name>
+    <jsp-file>/admin_panel/insert_item.jsp</jsp-file>
+       <init-param>
+      <param-name>XML</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>insertItem</servlet-name>
+    <url-pattern>/insert_item.jsp</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>products</servlet-name>
+    <jsp-file>/products.jsp</jsp-file>
+    <init-param>
+      <param-name>XML</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>products</servlet-name>
+    <url-pattern>/products.jsp</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>deleteCategory</servlet-name>
+    <jsp-file>/admin_panel/delete_category.jsp</jsp-file>
+    <init-param>
+      <param-name>XML</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteCategory</servlet-name>
+    <url-pattern>/delete_category.jsp</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>users</servlet-name>
+    <jsp-file>/admin_panel/users.jsp</jsp-file>
+    <init-param>
+      <param-name>XML</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>users</servlet-name>
+    <url-pattern>/users.jsp</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>trolley</servlet-name>
+    <jsp-file>/trolley.jsp</jsp-file>
+    <init-param>
+      <param-name>XML</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>trolley</servlet-name>
+    <url-pattern>/trolley.jsp</url-pattern>
+  </servlet-mapping>
+ 
+ 
+ 
+  <context-param>
+    <param-name>DBName</param-name>
+    <param-value></param-value>
+  </context-param>
+  <context-param>
+    <param-name>itemsPerPage</param-name>
+    <param-value>1</param-value>
+  </context-param>
+  <context-param>
+    <param-name>DBUser</param-name>
+    <param-value>postgres</param-value>
+  </context-param>
+  <context-param>
+    <param-name>DBPassword</param-name>
+    <param-value>postgres</param-value>
+  </context-param>
+  <context-param>
+    <param-name>DBName</param-name>
+    <param-value>ecommerce_2016</param-value>
+  </context-param>
+  <context-param>
+    <param-name>XMLName</param-name>
+    <param-value>/files/market.xml</param-value>
+  </context-param>
+  <context-param>
+    <param-name>ImagesDir</param-name>
+    <param-value>/files/</param-value>
+  </context-param>
+  <context-param>
+    <param-name>JsDir</param-name>
+    <param-value>js/</param-value>
+  </context-param>
+</web-app>

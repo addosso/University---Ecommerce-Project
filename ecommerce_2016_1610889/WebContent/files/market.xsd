@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		elementFormDefault="qualified"
+		targetNamespace="http://melatti.org/market"
+		xmlns="http://melatti.org/market" >
+  
+  <xs:element name="id" type="xs:integer"/>
+
+  <xs:element name="currency">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+	<xs:element name="toEUR" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+	<xs:element name="toDollar" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="image">
+    <xs:complexType>
+      <xs:attribute name="src" type="xs:string" use="optional"/>
+      <xs:attribute name="alt" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="item">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="id"/>
+	<xs:element name="title" type="xs:string"/>
+	<xs:element name="description" type="xs:string" minOccurs="0"/>
+	<xs:element name="price" type="xs:decimal"/>
+	<xs:element ref="currency"/>
+	<xs:element name="available" type="xs:dateTime"/>
+	<xs:element ref="image" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="show" type="xs:boolean" use="optional" default="true"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="account">
+    <xs:complexType>
+      <xs:attribute name="username" type="xs:string" use="required"/>
+      <xs:attribute name="password" type="xs:string" use="required"/>
+      <xs:attribute name="realname" type="xs:string" use="optional"/>
+      <xs:attribute name="realsurname" type="xs:string" use="optional"/>
+      <xs:attribute name="accountType" use="required">
+	<xs:simpleType>
+	  <xs:restriction base="xs:string">
+	    <xs:pattern value="administrator"/>
+	    <xs:pattern value="regular"/>
+	  </xs:restriction>
+	</xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="accounts">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="account" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="category">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="id"/>
+	<xs:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
+	<xs:element ref="image" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="categories">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="category" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="market">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element ref="accounts" minOccurs="0" maxOccurs="1"/>
+	<xs:element ref="categories" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<market xmlns="http://melatti.org/market"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="market.xsd">
+  <accounts>
+    <account username="root" password="12345" accountType="administrator"/>
+    <account username="antonio" realname="Antonio" realsurname="La Trippa" password="12345" accountType="regular"/>
+  </accounts>
+
+  <categories>
+    <category name="Books">
+      <id>1</id>
+      <item show="true">
+	<id>1</id>
+	<title>La Divina Commedia</title>
+	<description>A rather complicated fantasy tale by D. Alighieri (in Italian)</description>
+	<price>10</price>
+	<currency>
+	  <name>EUR</name>
+	  <toEUR>1</toEUR>
+	  <toDollar>1.1031</toDollar>
+	</currency>
+	<available>2016-01-01T00:00:00</available>
+	<image src="images/divina-commedia-ed-rossa.jpg"/>
+      </item>
+      <item>
+	<id>2</id>
+	<title>Paradise Lost</title>
+	<description>A rather complicated fantasy tale by J. Milton (in ancient English)</description>
+	<price>20</price>
+	<currency>
+	  <name>Pounds</name>
+	  <toEUR>1.28988306</toEUR>
+	</currency>
+	<available>2016-01-01T00:00:00</available>
+	<image src="images/paradise_lost.jpg"/>
+      </item>
+      <image src="images/books.jpeg"/>
+    </category>
+
+    <category name="For your home">
+      <id>2</id>
+      <item>
+	<id>1</id>
+	<title>Mirror</title>
+	<description>A precious mirror for your bathroom</description>
+	<price>100</price>
+	<currency>
+	  <name>EUR</name>
+	  <toEUR>1</toEUR>
+	  <toDollar>1.1031</toDollar>
+	</currency>
+	<available>2016-01-01T00:00:00</available>
+      </item>
+      <item>
+	<id>2</id>
+	<title>Desk</title>
+	<description>A marvellous desk in wood</description>
+	<price>1000</price>
+	<currency>
+	  <name>Pounds</name>
+	  <toEUR>1.28988306</toEUR>
+	</currency>
+	<available>2016-01-01T00:00:00</available>
+	<image src="images/scrivania.jpeg"/>
+      </item>
+    </category>
+
+    <category name="Beauty">
+      <id>3</id>
+      <item>
+	<id>1</id>
+	<title>Eau de Chanel n. 5</title>
+	<description>A description is not needed</description>
+	<price>100</price>
+	<currency>
+	  <name>EUR</name>
+	  <toEUR>1</toEUR>
+	  <toDollar>1.1031</toDollar>
+	</currency>
+	<available>2016-01-01T00:00:00</available>
+	<image src="images/chanel.jpeg"/>
+      </item>
+      <item>
+	<id>2</id>
+	<title>Make-up</title>
+	<description>Complete make-up in one box</description>
+	<price>100</price>
+	<currency>
+	  <name>Pounds</name>
+	  <toEUR>1.28988306</toEUR>
+	</currency>
+	<available>2016-01-01T00:00:00</available>
+      </item>
+    </category>
+  </categories>
+</market>
